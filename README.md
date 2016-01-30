@@ -11,12 +11,16 @@ Mustang can run in win, osx and linux.
 ## Requirement
 Node
 <https://nodejs.org>.
+Bower
+<http://bower.io>.
 
 ## Build
 1. git clone https://github.com/wantg/mustang.git
-2. cd mustang
-3. node install
-3. node build/build.js
+2. cd mustang/sources
+3. npm install
+4. cd ../build
+5. npm install
+6. node build.js
 
 when finish build, the binary will appear in build directory.
 
