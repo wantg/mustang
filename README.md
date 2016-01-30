@@ -9,10 +9,7 @@ console will download content in lan.
 Mustang can run in win, osx and linux.
 
 ## Requirement
-Node
-<https://nodejs.org>.
-Bower
-<http://bower.io>.
+[Node](https://nodejs.org) and [Bower](http://bower.io)
 
 ## Build
 1. git clone https://github.com/wantg/mustang.git
