@@ -1,0 +1,12 @@
+{
+    "server-status":"代理服务正在运行, 代理地址是 %s, 端口号是 %s",
+
+    "request-list-header-column-time": "时间",
+    "request-list-header-column-device": "设备",
+    "request-list-header-column-request": "请求",
+    "request-list-header-column-local-file": "文件",
+    "request-list-header-column-config": "配置",
+
+    "request-list-row-trigger-copy": "复制URL",
+    "request-list-row-trigger-file": "选择文件"
+}

@@ -1,0 +1,12 @@
+{
+    "server-status":"Proxy server is running at %s, port is %s",
+
+    "request-list-header-column-time": "Time",
+    "request-list-header-column-device": "Device",
+    "request-list-header-column-request": "Request",
+    "request-list-header-column-local-file": "Local file",
+    "request-list-header-column-config": "Config",
+
+    "request-list-row-trigger-copy": "Copy URL",
+    "request-list-row-trigger-file": "Pick File"
+}

@@ -1,0 +1,6 @@
+bin
+node_modules
+bower_components
+cache
+*.7z
+*.dmg

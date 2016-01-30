@@ -1,0 +1,27 @@
+{
+  "name": "mustang",
+  "version": "1.1.0",
+  "description": "",
+  "main": "index.html",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "wantg78@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "moment": "^2.11.1",
+    "proxy": "^0.2.4",
+    "winston": "^2.1.1"
+  },
+  "window": {
+    "title": "Mustang",
+    "icon": "icon.ico",
+    "frame": true,
+    "toolbar": false,
+    "width": 1400,
+    "height": 780,
+    "min_width": 1400,
+    "min_height": 780
+  }
+}
