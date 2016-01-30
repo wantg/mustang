@@ -13,8 +13,9 @@ Node
 <https://nodejs.org>.
 
 ## Build
-1. git clone https://github.com/wantg/Mustang.git
-2. cd Mustang
+1. git clone https://github.com/wantg/mustang.git
+2. cd mustang
+3. node install
 3. node build/build.js
 
 when finish build, the binary will appear in build directory.
