@@ -30,7 +30,7 @@ if (os.platform() == 'darwin') {
         'del /S /Q '+buildPath+path.sep+appTitle+'-'+appVersion+'-*',
     ];
     finishSchemas  = [
-        '"C:\\Program Files\\7-Zip\\7z" a -t7z '+buildPath+path.sep+appTitle+'-'+appVersion+'-win32.7z '+binPath+'\\'+appTitle+'\\win32\\*',
+        __dirname+'/7za a -t7z '+buildPath+path.sep+appTitle+'-'+appVersion+'-win32.7z '+binPath+'\\'+appTitle+'\\win32\\*',
         'rmdir /S /Q '+binPath
     ];
 } else {
