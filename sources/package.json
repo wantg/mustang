@@ -22,9 +22,9 @@
     "icon": "icon.ico",
     "frame": true,
     "toolbar": false,
-    "width": 1400,
-    "height": 780,
-    "min_width": 1400,
-    "min_height": 780
+    "width": 1000,
+    "height": 600,
+    "min_width": 1000,
+    "min_height": 600
   }
 }
