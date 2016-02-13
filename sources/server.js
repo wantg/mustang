@@ -7,6 +7,8 @@ var proxy   = require('proxy');
 var config  = require('./config');
 var logger  = config.logger;
 
+console.log('log in '+config.logPath);
+
 const server = proxy(http.createServer());
 var proxyRequestHandler = server._events['request'];
 delete(server._events['request']);

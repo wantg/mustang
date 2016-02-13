@@ -1,5 +1,19 @@
-var moment = require('moment');
+'use strict';
+
+var os      = require('os');
+var path    = require('path');
+var fs      = require('fs');
+var moment  = require('moment');
 var winston = require('winston');
+
+var logPath = __dirname+path.sep+'logs';
+if (os.platform() != 'darwin') {
+    logPath = path.dirname(process.execPath)+path.sep+'logs';
+}
+
+if(!fs.existsSync(logPath)){
+    fs.mkdirSync(logPath);
+}
 
 var logger = new (winston.Logger)({
     level: 'debug',
@@ -9,7 +23,7 @@ var logger = new (winston.Logger)({
             timestamp: function() {
                 return '['+moment().format('YYYY-MM-DD HH:mm:ss')+']';
             },
-            filename: __dirname + '/logs/runtime-'+moment().format('YYYY-MM-DD')+'.log',
+            filename: logPath+path.sep+'runtime-'+moment().format('YYYY-MM-DD')+'.log',
             json: false
         })
     ],
@@ -19,7 +33,7 @@ var logger = new (winston.Logger)({
             timestamp: function() {
                 return '['+moment().format('YYYY-MM-DD HH:mm:ss')+']';
             },
-            filename: __dirname + '/logs/exceptions-'+moment().format('YYYY-MM-DD')+'.log',
+            filename: logPath+path.sep+'exceptions-'+moment().format('YYYY-MM-DD')+'.log',
             json: false
         })
     ],
@@ -28,5 +42,6 @@ var logger = new (winston.Logger)({
 
 module.exports = {
     logger: logger,
+    logPath: logPath,
     port: 8084,
 };
