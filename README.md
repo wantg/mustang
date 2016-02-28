@@ -21,5 +21,5 @@ Mustang can run in win, osx and linux.
 
 when finish build, the binary will appear in build directory.
 
-## contact
+## Contact
 wantg78@gmail.com
