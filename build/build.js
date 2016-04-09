@@ -33,12 +33,16 @@ const opts = {
 console.log(opts);
 packager(opts, function(err, appPath) {
     // console.log(err || appPath);
+    const appDir = util.format('%s%s%s-%s-%s', binPath,path.sep,appTitle,platform,arch);
     if (platform == 'darwin') {
-        const appDir = util.format('%s/%s-%s-%s', binPath,appTitle,platform,arch);
         childProcess.execSync(util.format('hdiutil create -volname %s-%s -srcfolder %s/%s.app -ov -format UDZO %s/%s-%s-osx.dmg',
             appTitle,appVersion,
             appDir,appTitle,
             binPath,appTitle,appVersion));
         childProcess.execSync(util.format('rm -rf %s', appDir));
+    } else if (platform == 'win32') {
+        childProcess.execSync(util.format('del '+binPath+path.sep+appTitle+'-'+appVersion+'-win32.7z'));
+        childProcess.execSync(util.format(__dirname+path.sep+'7za a -t7z '+binPath+path.sep+appTitle+'-'+appVersion+'-win32.7z '+appDir+path.sep+'*'));
+        childProcess.execSync(util.format('rmdir /S /Q %s',appDir));
     }
 });
