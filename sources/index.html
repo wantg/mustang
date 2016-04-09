@@ -116,11 +116,11 @@
         var os          = require('os');
         var fs          = require('fs');
         var util        = require('util');
-        var app         = require('remote');
+        var app         = require('electron').remote;
         var moment      = require('moment');
         var config      = require('./config');
         var server      = require('./server');
-        // var gui         = require('nw.gui');
+        var dialog      = app.dialog;
         var lang        = {};
         var keywords    = ['.pup', '.pkg', '/download/'];
         var userLang    = navigator.language || navigator.userLanguage;
@@ -139,15 +139,15 @@
         }
 
         function takeFile(el) {
-            var chooser = $('#fileDialog');
-            chooser.unbind('change');
-            chooser.change(function(evt) {
+            dialog.showOpenDialog(function(evt) {
+                var localFilePath = '';
+                if (evt) {
+                    localFilePath = evt[0];
+                }
                 var tr = $(el).parent('td').parent('tr');
-                tr.find('td.local-file').html($(this).val());
-                server.setLocalFile(tr.find('td.request')[0].innerText, $(this).val());
-                $(this).val('');
+                tr.find('td.local-file').html(localFilePath);
+                server.setLocalFile(tr.find('td.request')[0].innerText, localFilePath);
             });
-            chooser.trigger('click'); 
         }
 
         function requestMonitor(req, isDownloadUrl) {

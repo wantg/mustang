@@ -34,10 +34,11 @@ console.log(opts);
 packager(opts, function(err, appPath) {
     // console.log(err || appPath);
     if (platform == 'darwin') {
-        childProcess.execSync(util.format('hdiutil create -volname %s-%s -srcfolder %s/%s-%s-%s/%s.app -ov -format UDZO %s/%s-%s-osx.dmg',
+        const appDir = util.format('%s/%s-%s-%s', binPath,appTitle,platform,arch);
+        childProcess.execSync(util.format('hdiutil create -volname %s-%s -srcfolder %s/%s.app -ov -format UDZO %s/%s-%s-osx.dmg',
             appTitle,appVersion,
-            binPath,appTitle,platform,arch,appTitle,
+            appDir,appTitle,
             binPath,appTitle,appVersion));
-        childProcess.execSync(util.format('rm -rf %s/%s-%s-%s', binPath,appTitle,platform,arch));
+        childProcess.execSync(util.format('rm -rf %s', appDir));
     }
 });
