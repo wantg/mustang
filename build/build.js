@@ -13,7 +13,7 @@ const opts = {
     'arch': 'x64',
     'dir': path.join(__dirname, '../sources'),
     'platform': platform,
-    'version': '0.36.9',
+    // 'version': '0.36.9',
     'asar': true,
     'overwrite': true,
     'icon': path.join(__dirname, '../resources/icon.icns'),
@@ -21,7 +21,7 @@ const opts = {
 };
 
 if (platform == 'win32') {
-    opts['arch'] = 'ia32';
+    opts.arch = 'ia32';
 }
 
 console.log(opts);
