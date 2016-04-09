@@ -11,7 +11,6 @@ const packager = require('electron-packager');
 const appTitle = 'Mustang';
 const appVersion = '1.1';
 const binPath = path.join(__dirname, './bin');
-const buildPath = __dirname;
 const platform = os.platform();
 var arch = 'x64';
 

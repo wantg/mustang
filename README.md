@@ -17,9 +17,9 @@ Mustang can run in win, osx and linux.
 3. npm install
 4. cd ../build
 5. npm install
-6. node build.js
+6. npm run package
 
-when finish build, the binary will appear in build directory.
+when finish build, the binary will appear in build/bin directory.
 
 ## Contact
 wantg78@gmail.com
