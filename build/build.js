@@ -23,6 +23,7 @@ const opts = {
     'arch': arch,
     'dir': path.join(__dirname, '../sources'),
     'platform': platform,
+    'ignore': 'node_modules/bower',
     // 'version': '0.36.9',
     'asar': true,
     'overwrite': true,
